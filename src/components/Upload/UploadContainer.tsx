@@ -1,12 +1,14 @@
+import { memo } from 'react';
 import { DragAndDrop } from './DragAndDrop';
 import { StyledUploadContainer } from './styles';
 
-export const UploadContainer = () => {
+export const UploadContainer = memo(({uploadPayments} : { uploadPayments: Function }) => {
     return (
         <>
             <StyledUploadContainer>
-                <DragAndDrop />
+                <h1>Upload Payments</h1>
+                <DragAndDrop uploadPayments={uploadPayments} />
             </StyledUploadContainer>
         </>
     )
-}
+});

@@ -1,7 +1,7 @@
 import { StyledButton } from './styles';
 
-export const Button = ({ text = 'Submit'}) => {
+export const Button = ({ text = 'Submit', disabled = false }) => {
     return (
-        <StyledButton size="small" color="green">{text}</StyledButton>
+        <StyledButton disabled={disabled} size="small" color="green">{text}</StyledButton>
     )
 };

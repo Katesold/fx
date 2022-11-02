@@ -1,12 +1,10 @@
 import { TableHead, TableHeader, TableHeaderRow } from "./styles";
 
-export const TableHeadContainer = ({ row }: { row: string[][] }) => {
-    console.log(row, 'row')
+export const TableHeadContainer = ({ row }: { row: string[] }) => {
     return (
         <TableHead>
             <TableHeaderRow>
-                {row?.[0]?.map(cell => {
-                    console.log(cell, 'cell');
+                {row?.map(cell => {
                     return (
                         <TableHeader>{cell}</TableHeader>
                     )

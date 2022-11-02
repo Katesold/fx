@@ -12,6 +12,8 @@ export const StyledTableContainer = styled.div`
 export const StyledTable = styled.table`
   width: 100%;
   margin-bottom: 10px;
+  border-collapse: collapse;
+  text-align: center;
 `;
 
 export const TableHead = styled.thead`
@@ -27,14 +29,18 @@ export const TableHeader = styled.th`
   height: 28px;
   font-size: 11px;
   line-height: 18px;
+  border-top: 1pt solid #e2e2e2;
+  color: #757575;
 `;
 
 export const TableHeaderRow = styled.tr`
   width: 100%;
+  border-bottom: 1pt solid #e2e2e2;
 `;
 
 export const TableRow = styled.tr`
   width: 100%;
+  border-bottom: 1pt solid #e2e2e2;
 `;
 
 export const TableData = styled.td`
@@ -42,6 +48,11 @@ export const TableData = styled.td`
   height: 50px;
   font-size: 13px;
   line-height: 18px;
+
+  img {
+    width: 15px;
+    margin: -3px 3px;
+  }
 `;
 
 export const StyledContainer = styled(ToastContainer)`

@@ -1,34 +1,23 @@
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import GlobalStyle from "./components/global";
 import { AppContainer } from './AppContainer';
 import { TableContainer } from './components/Table/TableContainer';
 import { UploadContainer } from './components/Upload/UploadContainer';
-import { ResponseData } from './components/Table/types';
-
-export interface AppCtx {
-  data: string[],
-  uploadPayments: React.Dispatch<React.SetStateAction<string[]>>
-}
-
-export const AppContext = createContext<AppCtx | null>(null);
 
 function App() {
   const [data, setData] = useState([] as string[]);
 
-  const providerValues = {
-    data,
-    uploadPayments: setData
-  }
+  const updateData = (payments: string[]) => {
+    setData(payments);
+  };
 
   return (
     <>
       <GlobalStyle />
-      <AppContext.Provider value={providerValues} >
         <AppContainer>
-          <UploadContainer />
-          <TableContainer />
+          <UploadContainer uploadPayments={updateData} />
+          {data.length > 0 ? <TableContainer data={data}/> : null}
         </AppContainer>
-      </AppContext.Provider>
     </>
   );
 }

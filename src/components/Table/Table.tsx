@@ -1,72 +1,53 @@
-import { useContext, useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { memo, useCallback, useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { AppContext } from '../../App';
-import { StyledTable, StyledContainer, TableBody, TableData, TableHead, TableHeader, TableHeaderRow, TableRow } from './styles';
+import { StyledTable } from './styles';
 import { TableBodyContainer } from './TableBodyContainer';
 import { TableHeadContainer } from './TableHeadContainer';
-import { ResponseData, TableProps } from './types';
 
-const Msg = () => {
-    return (
-        <>
-            <h3>Payment Successful</h3>
-            <p> Payments are processing. You will be notified when they are ready</p>
-        </>
-    )
-}
+export const Table = memo(({ setIsValid, data, toastPopUp }: { setIsValid: Function, data: string[], toastPopUp: Function }) => {
+    const [tableDataBoth, setTableDataBoth] = useState([] as string[][][]);
 
-export const Table = ({ setIsValid }: { setIsValid: Function }) => {
-    const ctxData = useContext(AppContext);
-    const [data, setData] = useState([] as string[][]);
-    const [headerData, setHeaderData] = useState([] as string[][]);
-
-    const showToastMsg = () => {
-        toast.success('Successfully uploaded file', {
-            position: toast.POSITION.TOP_CENTER
-        });
-    };
-
-    useEffect(() => {
+    const calulateTableValues = useCallback((data: string[]) => {
         const dataRow: string[][] = [];
         const headerRow: string[][] = [];
         let valid = true;
-        ctxData?.data.forEach((row, index) => {
+        const indices: number[] = [];
+        data.forEach((row, index) => {
             const splitToArrData = row.split(',');
             if (!splitToArrData.includes('')) {
-                if (index == 0) {
+                if (index === 0) {
                     headerRow.push(splitToArrData);
                 } else {
                     dataRow.push(splitToArrData);
                 }
-                setData(dataRow);
-                setHeaderData(headerRow);
             } else if (splitToArrData.length !== 1) {
+                indices.push(index);
                 valid = false;
-                toast.error(`The file contains incorrect data on the ${index + 1}th line`, {
-                    position: toast.POSITION.TOP_CENTER,
-                 hideProgressBar: true, 
-                 className: 'toastErrorsBg'
-                });
             }
-            setIsValid(valid);
         });
-        if (valid) {
-            toast.success(<Msg />, { hideProgressBar: true, className: 'toastSuccessBg' });
+        if (valid && dataRow.length > 1) {
+            toastPopUp(valid, indices);
+        } else {
+            toastPopUp(valid, indices);
         }
-    }, [ctxData]);
+        setIsValid(valid);
+        return [headerRow, dataRow];
+    }, [setIsValid, toastPopUp]);
+
+    useEffect(() => {
+        const values = calulateTableValues(data);
+        setTableDataBoth(values);
+    }, [data]);
 
     return (
         <>
-            <StyledTable>
-                {data.length > 0 ? (
-                    <>
-                        <TableHeadContainer row={headerData} />
-                        <TableBodyContainer rows={data} />
-                    </>
-                ) : null}
-            </StyledTable>
-            <StyledContainer theme="colored" />
+            {tableDataBoth.length > 0 ? (
+                <StyledTable>
+                    <TableHeadContainer row={tableDataBoth[0][0]} />
+                    <TableBodyContainer rows={tableDataBoth[1]} />
+
+                </StyledTable>
+            ) : null}
         </>
     )
-};
+});

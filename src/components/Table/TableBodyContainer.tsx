@@ -1,14 +1,18 @@
 import { TableBody, TableData, TableRow } from "./styles";
+import flag from '../../assets/flag.png';
 
 export const TableBodyContainer = ({ rows }: { rows: string[][] }) => {
     return (
         <TableBody>
             {rows.map(row => {
-                console.log(row);
                 return (
                     <TableRow>
                         {row.map(dataCell => {
-                            return <TableData>{dataCell}</TableData>
+                             if(dataCell === 'GBP') {
+                                return <TableData><img src={flag} alt='currency' />{dataCell}</TableData>
+                            } else {
+                                return <TableData>{dataCell}</TableData>
+                            }
                         })}
 
                     </TableRow>
