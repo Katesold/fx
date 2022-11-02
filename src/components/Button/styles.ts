@@ -6,12 +6,13 @@ export const StyledButton = styled.button<StyledButtonProps>`
     border-radius: 4px;
     border: 2px solid #098375;
     color: #FFF;
-    margin: 0 1em;
+    margin: 0 20px 0 auto;
     padding: 1em 2em;
     font-size: ${props => (props.size === 'small' ? '12px' : '16px')};
     font-weight: 600;
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out;
+    width: 120px;
     &:hover {
             border-color: #000000;
             transition: border-color 0.2s ease-in-out;

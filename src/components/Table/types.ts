@@ -1,4 +1,4 @@
-interface ResponseData {
+export interface ResponseData {
     name: string;
     id: string;
     amount: number;

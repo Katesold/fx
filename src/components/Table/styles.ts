@@ -1,5 +1,13 @@
 import styled from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 import { TableProps } from './types';
+
+export const StyledTableContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 20px;
+`;
 
 export const StyledTable = styled.table`
   width: 100%;
@@ -19,11 +27,13 @@ export const TableHeader = styled.th`
   height: 28px;
   font-size: 11px;
   line-height: 18px;
-  color: #FFF;
 `;
 
 export const TableHeaderRow = styled.tr`
-  background-color: grey;
+  width: 100%;
+`;
+
+export const TableRow = styled.tr`
   width: 100%;
 `;
 
@@ -32,4 +42,16 @@ export const TableData = styled.td`
   height: 50px;
   font-size: 13px;
   line-height: 18px;
+`;
+
+export const StyledContainer = styled(ToastContainer)`
+  // https://styled-components.com/docs/faqs#how-can-i-override-styles-with-higher-specificity
+  &&&.Toastify__toast-container {
+    .toastSuccessBg {
+      background-color: #5FA772;
+    }
+    .toastErrorBg {
+      background-color: #B95656;
+    }
+  }
 `;
