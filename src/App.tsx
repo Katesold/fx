@@ -7,15 +7,11 @@ import { UploadContainer } from './components/Upload/UploadContainer';
 function App() {
   const [data, setData] = useState([] as string[]);
 
-  const updateData = (payments: string[]) => {
-    setData(payments);
-  };
-
   return (
     <>
       <GlobalStyle />
         <AppContainer>
-          <UploadContainer uploadPayments={updateData} />
+          <UploadContainer uploadPayments={setData} />
           {data.length > 0 ? <TableContainer data={data}/> : null}
         </AppContainer>
     </>

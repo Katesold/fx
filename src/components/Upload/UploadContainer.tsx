@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { DragAndDrop } from './DragAndDrop';
 import { StyledUploadContainer } from './styles';
+import { UploadProps } from './types';
 
-export const UploadContainer = memo(({uploadPayments} : { uploadPayments: Function }) => {
+export const UploadContainer: React.FC<UploadProps> = memo(({uploadPayments}) => {
     return (
         <>
             <StyledUploadContainer>

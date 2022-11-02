@@ -3,8 +3,9 @@ import { useDropzone } from 'react-dropzone';
 import { toast, ToastContainer } from 'react-toastify';
 import { StyledAcceptedFilesP, StyledDragAndDrop } from './styles';
 import cloud from '../../assets/cloud.png';
+import { UploadProps } from './types';
 
-export const DragAndDrop = memo(({ uploadPayments }: { uploadPayments: Function}) => {
+export const DragAndDrop: React.FC<UploadProps> = memo(({ uploadPayments }) => {
     const onDrop = useCallback((acceptedFiles: any) => {
         acceptedFiles.forEach((file: any) => {
             const reader = new FileReader();
@@ -26,17 +27,15 @@ export const DragAndDrop = memo(({ uploadPayments }: { uploadPayments: Function}
                     });
                 };
             }
-            console.log('file', file)
             reader.readAsText(file);
         });
-    }, []);
+    }, [uploadPayments]);
 
     const {
         isDragAccept,
         isDragReject,
         getRootProps,
-        getInputProps,
-        acceptedFiles } = useDropzone({
+        getInputProps } = useDropzone({
             onDrop,
             accept: {
                 'text/csv': ['.csv', '.xls', '.xlsx'],
@@ -53,7 +52,7 @@ export const DragAndDrop = memo(({ uploadPayments }: { uploadPayments: Function}
                 {isDragReject && (<p>Incorrect file format</p>)}
                 <StyledAcceptedFilesP>Supported file types: <span>.csv .xls .xlsx</span></StyledAcceptedFilesP>
             </StyledDragAndDrop>
-            <ToastContainer theme="colored" />
+            <ToastContainer theme='colored' />
         </>
     )
 });

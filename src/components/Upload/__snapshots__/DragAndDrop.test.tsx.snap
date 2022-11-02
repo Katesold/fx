@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DragAndDrop components are being tested should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-gswNZR igKVwO dropzone"
+    role="presentation"
+    tabindex="0"
+  >
+    <input
+      accept="text/csv,.csv,.xls,.xlsx"
+      multiple=""
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+    <img
+      alt="cloud"
+      src="cloud.png"
+    />
+    <h4>
+      Drag & Drop
+    </h4>
+    <p
+      class="sc-dkrFOg fUSOcT"
+    >
+      Supported file types: 
+      <span>
+        .csv .xls .xlsx
+      </span>
+    </p>
+  </div>
+  <div
+    class="Toastify"
+  />
+</div>
+`;
