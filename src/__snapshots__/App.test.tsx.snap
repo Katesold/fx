@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App components are being tested should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bcXHqe chvWhX"
+  >
+    <div
+      class="sc-kDvujY klcgqA"
+    >
+      <h1>
+        Upload Payments
+      </h1>
+      <div
+        class="sc-ipEyDJ gwRKMM dropzone"
+        role="presentation"
+        tabindex="0"
+      >
+        <input
+          accept="text/csv,.csv,.xls,.xlsx"
+          multiple=""
+          style="display: none;"
+          tabindex="-1"
+          type="file"
+        />
+        <img
+          alt="cloud"
+          src="cloud.png"
+        />
+        <h4>
+          Drag & Drop
+        </h4>
+        <p
+          class="sc-csuSiG hNyWrk"
+        >
+          Supported file types: 
+          <span>
+            .csv .xls .xlsx
+          </span>
+        </p>
+      </div>
+      <div
+        class="Toastify"
+      />
+    </div>
+  </div>
+</div>
+`;

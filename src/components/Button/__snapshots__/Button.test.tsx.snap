@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button components are being tested should display the disabled button correctly with props 1`] = `
+<div>
+  <button
+    class="sc-bcXHqe eXfJSU"
+    color="green"
+    disabled=""
+  >
+    Submit
+  </button>
+</div>
+`;
+
+exports[`Button components are being tested should match snapshot 1`] = `
+<div>
+  <button
+    class="sc-bcXHqe eXfJSU"
+    color="green"
+  >
+    Submit
+  </button>
+</div>
+`;

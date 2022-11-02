@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table components are being tested should match the snapshot 1`] = `
+<div>
+  <table
+    class="sc-gswNZR hxImTJ"
+  >
+    <thead
+      class="sc-dkrFOg fXYAxm"
+    >
+      <tr
+        class="sc-jSUZER kLPgkR"
+      >
+        <th
+          class="sc-eDvSVe BNyIW"
+        >
+          Beneficiary ID
+        </th>
+        <th
+          class="sc-eDvSVe BNyIW"
+        >
+          Payment Currency
+        </th>
+        <th
+          class="sc-eDvSVe BNyIW"
+        >
+          Payment Amount
+        </th>
+        <th
+          class="sc-eDvSVe BNyIW"
+        >
+          Payment Reference
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="sc-hLBbgP bzkRai"
+    >
+      <tr
+        class="sc-gKPRtg fXGJDB"
+      >
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          100001
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          <img
+            alt="currency"
+            src="flag.png"
+          />
+          GBP
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          100
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          Invoice 1
+        </td>
+      </tr>
+      <tr
+        class="sc-gKPRtg fXGJDB"
+      >
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          100002
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          <img
+            alt="currency"
+            src="flag.png"
+          />
+          GBP
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          150.5
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          Invoice 2
+        </td>
+      </tr>
+      <tr
+        class="sc-gKPRtg fXGJDB"
+      >
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          100003
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          <img
+            alt="currency"
+            src="flag.png"
+          />
+          GBP
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          120.75
+        </td>
+        <td
+          class="sc-iBYQkv fcxNDm"
+        >
+          Invoice 3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

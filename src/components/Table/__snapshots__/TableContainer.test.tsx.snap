@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableContainer components are being tested should match the snapshot 1`] = `
+<div>
+  <div
+    class="sc-gswNZR joPihG"
+  >
+    <table
+      class="sc-dkrFOg dgDqgz"
+    >
+      <thead
+        class="sc-hLBbgP bzkRai"
+      >
+        <tr
+          class="sc-gKPRtg fXGJDB"
+        >
+          <th
+            class="sc-jSUZER foWzlI"
+          >
+            test
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="sc-eDvSVe bJxIbO"
+      >
+        <tr
+          class="sc-iBYQkv gaauiS"
+        >
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            test2
+          </td>
+        </tr>
+        <tr
+          class="sc-iBYQkv gaauiS"
+        >
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            23555
+          </td>
+        </tr>
+        <tr
+          class="sc-iBYQkv gaauiS"
+        >
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            4w55
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="sc-bcXHqe eXfJSU"
+      color="green"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`TableContainer components are being tested should match the snapshot with incorrect data 1`] = `
+<div>
+  <div
+    class="sc-gswNZR joPihG"
+  >
+    <table
+      class="sc-dkrFOg dgDqgz"
+    >
+      <thead
+        class="sc-hLBbgP bzkRai"
+      >
+        <tr
+          class="sc-gKPRtg fXGJDB"
+        >
+          <th
+            class="sc-jSUZER foWzlI"
+          >
+            Beneficiary ID
+          </th>
+          <th
+            class="sc-jSUZER foWzlI"
+          >
+            Payment Currency
+          </th>
+          <th
+            class="sc-jSUZER foWzlI"
+          >
+            Payment Amount
+          </th>
+          <th
+            class="sc-jSUZER foWzlI"
+          >
+            Payment Reference
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="sc-eDvSVe bJxIbO"
+      >
+        <tr
+          class="sc-iBYQkv gaauiS"
+        >
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            100005
+          </td>
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            <img
+              alt="currency"
+              src="flag.png"
+            />
+            GBP
+          </td>
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            255
+          </td>
+          <td
+            class="sc-ftTHYK jdUNiY"
+          >
+            Invoice 5
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

@@ -1,10 +1,10 @@
-import { useState, memo, ChangeEvent, MouseEvent } from "react";
+import { useState, memo } from "react";
 import { Button } from "../Button/Button"
 import { Table } from "./Table"
 import { StyledContainer, StyledTableContainer } from './styles';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ResponseData } from "./types";
+import { ResponseData, TableContainerProps } from "./types";
 
 const Msg = memo(() => {
     return (
@@ -15,7 +15,7 @@ const Msg = memo(() => {
     )
 });
 
-export const TableContainer = memo(({ data }: { data: string[] }) => {
+export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => {
     const [isValid, setIsValid] = useState(false);
 
     const sendData = async (formattedData: ResponseData[]) => {
@@ -26,8 +26,8 @@ export const TableContainer = memo(({ data }: { data: string[] }) => {
             method: 'POST',
             body: JSON.stringify(formattedData),
         });
-        const data: {message: string} = await response.json();
-        if(response.status === 200) {
+        const data: { message: string } = await response.json();
+        if (response.status === 200) {
             toast.success(data.message);
         } else {
             toast.error(`Failed file upload with the following message: ${data.message}`);

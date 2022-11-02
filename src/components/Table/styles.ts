@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ToastContainer } from 'react-toastify';
-import { TableProps } from './types';
 
 export const StyledTableContainer = styled.div`
   display: flex;
@@ -61,6 +60,7 @@ export const StyledContainer = styled(ToastContainer)`
     .toastSuccessBg {
       background-color: #5FA772;
     }
+    &--toastify-color-success: #07bc0c;
     .toastErrorBg {
       background-color: #B95656;
     }

@@ -1,12 +1,13 @@
 import { TableHead, TableHeader, TableHeaderRow } from "./styles";
+import { TableHeadContainerProps } from "./types";
 
-export const TableHeadContainer = ({ row }: { row: string[] }) => {
+export const TableHeadContainer: React.FC<TableHeadContainerProps> = ({ row }) => {
     return (
         <TableHead>
             <TableHeaderRow>
                 {row?.map(cell => {
                     return (
-                        <TableHeader>{cell}</TableHeader>
+                        <TableHeader key={`headerCell-${cell}`}>{cell}</TableHeader>
                     )
                 })}
             </TableHeaderRow>

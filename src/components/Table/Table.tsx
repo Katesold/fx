@@ -3,10 +3,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { StyledTable } from './styles';
 import { TableBodyContainer } from './TableBodyContainer';
 import { TableHeadContainer } from './TableHeadContainer';
+import { TableProps } from './types';
 
-export const Table = memo(({ setIsValid, data, toastPopUp }: { setIsValid: Function, data: string[], toastPopUp: Function }) => {
-    const [tableDataBoth, setTableDataBoth] = useState([] as string[][][]);
-
+export const Table: React.FC<TableProps> = memo(({ setIsValid, data, toastPopUp }) => {
+    const [tableData, setTableData] = useState([] as string[][][]);
     const calulateTableValues = useCallback((data: string[]) => {
         const dataRow: string[][] = [];
         const headerRow: string[][] = [];
@@ -36,16 +36,15 @@ export const Table = memo(({ setIsValid, data, toastPopUp }: { setIsValid: Funct
 
     useEffect(() => {
         const values = calulateTableValues(data);
-        setTableDataBoth(values);
+        setTableData(values);
     }, [data]);
 
     return (
         <>
-            {tableDataBoth.length > 0 ? (
+            {tableData.length > 0 ? (
                 <StyledTable>
-                    <TableHeadContainer row={tableDataBoth[0][0]} />
-                    <TableBodyContainer rows={tableDataBoth[1]} />
-
+                    <TableHeadContainer row={tableData[0][0]} />
+                    <TableBodyContainer rows={tableData[1]} />
                 </StyledTable>
             ) : null}
         </>

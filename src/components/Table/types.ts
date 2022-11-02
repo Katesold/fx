@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface ResponseData {
     name: string;
     id: string;
@@ -7,5 +9,19 @@ export interface ResponseData {
 }
 
 export interface TableProps {
-    data: ResponseData[];
+    setIsValid: Dispatch<SetStateAction<boolean>>, 
+    data: string[] 
+    toastPopUp: (valid: boolean, indices: number[]) => void,
+}
+
+export interface TableHeadContainerProps {
+    row: string[]
+}
+
+export interface TableContainerProps {
+    data: string[]
+}
+
+export interface TableBodyContainerProps {
+    rows: string[][]
 }

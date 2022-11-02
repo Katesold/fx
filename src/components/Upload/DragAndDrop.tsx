@@ -9,8 +9,8 @@ export const DragAndDrop = memo(({ uploadPayments }: { uploadPayments: Function}
         acceptedFiles.forEach((file: any) => {
             const reader = new FileReader();
 
-            reader.onabort = () => toast.error('file reading was aborted'); // console.log('file reading was aborted'); // toast!
-            reader.onerror = () => toast.error('file reading has failed'); // console.log('file reading has failed');
+            reader.onabort = () => toast.error('file reading was aborted');
+            reader.onerror = () => toast.error('file reading has failed');
             reader.onload = () => {
                 const result = reader.result as string;
                 const headerRow = [];
@@ -26,6 +26,7 @@ export const DragAndDrop = memo(({ uploadPayments }: { uploadPayments: Function}
                     });
                 };
             }
+            console.log('file', file)
             reader.readAsText(file);
         });
     }, []);

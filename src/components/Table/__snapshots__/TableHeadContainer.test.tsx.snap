@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableHeadContainer components are being tested should match the snapshot 1`] = `
+<div>
+  <thead
+    class="sc-dkrFOg fXYAxm"
+  >
+    <tr
+      class="sc-jSUZER kLPgkR"
+    >
+      <th
+        class="sc-eDvSVe BNyIW"
+      >
+        Beneficiary ID
+      </th>
+      <th
+        class="sc-eDvSVe BNyIW"
+      >
+        Payment Currency
+      </th>
+      <th
+        class="sc-eDvSVe BNyIW"
+      >
+        Payment Amount
+      </th>
+      <th
+        class="sc-eDvSVe BNyIW"
+      >
+        Payment Reference
+      </th>
+    </tr>
+  </thead>
+</div>
+`;

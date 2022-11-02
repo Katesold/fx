@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableBodyContainer components are being tested should match the snapshot 1`] = `
+<div>
+  <tbody
+    class="sc-hLBbgP bzkRai"
+  >
+    <tr
+      class="sc-gKPRtg fXGJDB"
+    >
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        6535
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        <img
+          alt="currency"
+          src="flag.png"
+        />
+        GBP
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        122
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        Invoice 4
+      </td>
+    </tr>
+    <tr
+      class="sc-gKPRtg fXGJDB"
+    >
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        100005
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        <img
+          alt="currency"
+          src="flag.png"
+        />
+        GBP
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        255
+      </td>
+      <td
+        class="sc-iBYQkv fcxNDm"
+      >
+        Invoice 5
+      </td>
+    </tr>
+  </tbody>
+</div>
+`;
