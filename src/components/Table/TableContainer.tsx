@@ -1,17 +1,17 @@
-import { useState, memo } from "react";
-import { Button } from "../Button/Button"
-import { Table } from "./Table"
+import { useState, memo } from 'react';
+import { Button } from '../Button/Button';
+import { Table } from './Table';
 import { StyledContainer, StyledTableContainer } from './styles';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { ResponseData, TableContainerProps } from "./types";
+import { ResponseData, TableContainerProps } from './types';
 
 const Msg = memo(() => {
     return (
-        <>
+        <div className={'toastSuccessBg'}>
             <h3>Payment Successful</h3>
             <p> Payments are processing. You will be notified when they are ready</p>
-        </>
+        </div>
     )
 });
 
@@ -28,9 +28,12 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
         });
         const data: { message: string } = await response.json();
         if (response.status === 200) {
-            toast.success(data.message);
+            toast.success(data.message, { hideProgressBar: true, className: 'toastSuccessBg' });
         } else {
-            toast.error(`Failed file upload with the following message: ${data.message}`);
+            toast.error(`Failed file upload with the following message: ${data.message}`, {
+                hideProgressBar: true,
+                className: 'toastErrorsBg'
+            });
         }
     }
 
@@ -74,7 +77,7 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
         <StyledTableContainer>
             <Table setIsValid={setIsValid} data={data} toastPopUp={toastPopUp} />
             {isValid ? <Button text='Submit' onClick={(event: React.MouseEvent<HTMLButtonElement>) => handleClick(event)} /> : null}
-            <StyledContainer theme="colored" />
+            <StyledContainer theme='colored' />
         </StyledTableContainer>
     )
 });

@@ -1,6 +1,6 @@
-import { TableBody, TableData, TableRow } from "./styles";
+import { TableBody, TableData, TableRow } from './styles';
+import { TableBodyContainerProps } from './types';
 import flag from '../../assets/flag.png';
-import { TableBodyContainerProps } from "./types";
 
 export const TableBodyContainer: React.FC<TableBodyContainerProps> = ({ rows }) => {
     return (

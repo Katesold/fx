@@ -1,5 +1,5 @@
-import { TableHead, TableHeader, TableHeaderRow } from "./styles";
-import { TableHeadContainerProps } from "./types";
+import { TableHead, TableHeader, TableHeaderRow } from './styles';
+import { TableHeadContainerProps } from './types';
 
 export const TableHeadContainer: React.FC<TableHeadContainerProps> = ({ row }) => {
     return (

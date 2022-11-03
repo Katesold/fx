@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import GlobalStyle from "./components/global";
+import GlobalStyle from './components/global';
 import { AppContainer } from './AppContainer';
 import { TableContainer } from './components/Table/TableContainer';
 import { UploadContainer } from './components/Upload/UploadContainer';
