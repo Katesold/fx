@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 describe('UploadContainer components are being tested', () => {
     const props = {
         uploadPayments: jest.fn()
-    }
+    };
     it('should match snapshot', () => {
         const { container } = render(<UploadContainer {...props} />);
         expect(container).toMatchSnapshot();

@@ -36,9 +36,6 @@ exports[`UploadContainer components are being tested should match snapshot 1`] =
         </span>
       </p>
     </div>
-    <div
-      class="Toastify"
-    />
   </div>
 </div>
 `;

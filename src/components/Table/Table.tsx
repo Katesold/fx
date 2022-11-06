@@ -37,7 +37,7 @@ export const Table: React.FC<TableProps> = memo(({ setIsValid, data, toastPopUp 
     useEffect(() => {
         const values = calulateTableValues(data);
         setTableData(values);
-    }, [data]);
+    }, [data, calulateTableValues]);
 
     return (
         <>

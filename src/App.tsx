@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { StyledContainer } from './components/Table/styles';
+import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from './components/global';
 import { AppContainer } from './AppContainer';
 import { TableContainer } from './components/Table/TableContainer';
@@ -13,6 +15,7 @@ function App() {
         <AppContainer>
           <UploadContainer uploadPayments={setData} />
           {data.length > 0 ? <TableContainer data={data}/> : null}
+          <StyledContainer theme='colored' />
         </AppContainer>
     </>
   );

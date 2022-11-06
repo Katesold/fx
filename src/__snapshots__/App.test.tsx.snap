@@ -3,7 +3,7 @@
 exports[`App components are being tested should match snapshot 1`] = `
 <div>
   <div
-    class="sc-bcXHqe chvWhX"
+    class="sc-pyfCe gkpPAC"
   >
     <div
       class="sc-kDvujY klcgqA"
@@ -39,10 +39,10 @@ exports[`App components are being tested should match snapshot 1`] = `
           </span>
         </p>
       </div>
-      <div
-        class="Toastify"
-      />
     </div>
+    <div
+      class="Toastify"
+    />
   </div>
 </div>
 `;

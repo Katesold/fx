@@ -23,7 +23,7 @@ describe('TableContainer components are being tested', () => {
         userEvent.click(button);
         await waitFor(() => {
             expect(toast.success).toBeCalledWith(expect.anything(), {"className": "toastSuccessBg", "hideProgressBar": true});
-            expect(toast.success).toBeCalledWith('Payments Uploaded');
+            expect(toast.success).toBeCalledWith('Payments Uploaded', {"className": "toastSuccessBg", "hideProgressBar": true});
             expect(toast.success).toBeCalledTimes(2);
           });
     });

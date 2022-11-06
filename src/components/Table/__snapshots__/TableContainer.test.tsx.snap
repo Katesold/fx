@@ -56,6 +56,7 @@ exports[`TableContainer components are being tested should match the snapshot 1`
     <button
       class="sc-bcXHqe eXfJSU"
       color="green"
+      type="button"
     >
       Submit
     </button>

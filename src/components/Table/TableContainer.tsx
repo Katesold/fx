@@ -1,7 +1,7 @@
-import { useState, memo } from 'react';
+import { useState, memo, useCallback } from 'react';
 import { Button } from '../Button/Button';
 import { Table } from './Table';
-import { StyledContainer, StyledTableContainer } from './styles';
+import { StyledTableContainer } from './styles';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ResponseData, TableContainerProps } from './types';
@@ -28,16 +28,16 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
         });
         const data: { message: string } = await response.json();
         if (response.status === 200) {
-            toast.success(data.message, { hideProgressBar: true, className: 'toastSuccessBg' });
+            toast.success(data.message, { hideProgressBar: true, className: 'toastSuccessBg'});
         } else {
             toast.error(`Failed file upload with the following message: ${data.message}`, {
                 hideProgressBar: true,
-                className: 'toastErrorsBg'
+                className: 'toastErrorsBg',
             });
         }
-    }
+    };
 
-    const formatData = (data: string[]) => {
+    const formatData = useCallback((data: string[]) => {
         const formattedData: ResponseData[] = [];
         data.forEach((row, index) => {
             if (index !== 0 && row.length) {
@@ -53,15 +53,15 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
             }
         });
         return formattedData;
-    }
+    }, []);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         const formattedData = formatData(data);
         sendData(formattedData);
-    }
+    };
 
-    const toastPopUp = (valid: boolean, indices: number[]) => {
+    const toastPopUp = useCallback((valid: boolean, indices: number[]) => {
         if (!valid) {
             toast.error(`The file contains incorrect data on the ${indices.map((index) => index + 1)}th row`, {
                 position: toast.POSITION.TOP_CENTER,
@@ -69,15 +69,14 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
                 className: 'toastErrorsBg',
             });
         } else {
-            toast.success(<Msg />, { hideProgressBar: true, className: 'toastSuccessBg' });
+            toast.success(<Msg />, { hideProgressBar: true, className: 'toastSuccessBg'});
         }
-    };
+    }, []);
 
     return (
         <StyledTableContainer>
             <Table setIsValid={setIsValid} data={data} toastPopUp={toastPopUp} />
-            {isValid ? <Button text='Submit' onClick={(event: React.MouseEvent<HTMLButtonElement>) => handleClick(event)} /> : null}
-            <StyledContainer theme='colored' />
+            {isValid ? <Button type='button' onClick={(event: React.MouseEvent<HTMLButtonElement>) => handleClick(event)}>Submit</Button> : null}
         </StyledTableContainer>
     )
 });

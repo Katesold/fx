@@ -1,9 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { StyledAcceptedFilesP, StyledDragAndDrop } from './styles';
-import cloud from '../../assets/cloud.png';
 import { UploadProps } from './types';
+import cloud from '../../assets/cloud.png';
 
 export const DragAndDrop: React.FC<UploadProps> = memo(({ uploadPayments }) => {
     const onDrop = useCallback((acceptedFiles: any) => {
@@ -52,7 +52,6 @@ export const DragAndDrop: React.FC<UploadProps> = memo(({ uploadPayments }) => {
                 {isDragReject && (<p>Incorrect file format</p>)}
                 <StyledAcceptedFilesP>Supported file types: <span>.csv .xls .xlsx</span></StyledAcceptedFilesP>
             </StyledDragAndDrop>
-            <ToastContainer theme='colored' />
         </>
     )
 });

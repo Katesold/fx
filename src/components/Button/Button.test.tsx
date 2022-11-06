@@ -3,10 +3,9 @@ import { screen, render } from '@testing-library/react';
 
 describe('Button components are being tested', () => {
     const props = {
-        onClick: () => {},
-        size: 'small',
-        color: 'green',
+        onClick: jest.fn(),
         disabled: false,
+        children: 'Submit'
     };
     it('should match snapshot', () => {
         const { container } = render(<Button {...props} />);
