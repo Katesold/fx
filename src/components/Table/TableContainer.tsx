@@ -55,8 +55,7 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
         return formattedData;
     }, []);
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
+    const handleClick = () => {
         const formattedData = formatData(data);
         sendData(formattedData);
     };
@@ -76,7 +75,7 @@ export const TableContainer: React.FC<TableContainerProps> = memo(({ data }) => 
     return (
         <StyledTableContainer>
             <Table setIsValid={setIsValid} data={data} toastPopUp={toastPopUp} />
-            {isValid ? <Button type='button' onClick={(event: React.MouseEvent<HTMLButtonElement>) => handleClick(event)}>Submit</Button> : null}
+            {isValid ? <Button type='button' onClick={handleClick}>Submit</Button> : null}
         </StyledTableContainer>
     )
 });
