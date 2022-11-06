@@ -1,5 +1,5 @@
 import { Button } from './Button';
-import { screen, render } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 
 describe('Button components are being tested', () => {
     const props = {
@@ -24,4 +24,13 @@ describe('Button components are being tested', () => {
         const { container } = render(<Button {...newProps} />);
         expect(container).toMatchSnapshot();
     });
+
+    it("should call the onclick function when clicked", () => {
+        render(<Button {...props} />);
+        const button = screen.getByText('Submit');
+        expect(button).toBeInTheDocument();
+    
+        fireEvent.click(button);
+        expect(props.onClick).toHaveBeenCalledTimes(1);
+      });
 });
